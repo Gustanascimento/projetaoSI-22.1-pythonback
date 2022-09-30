@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "projetao"
+version = "0.1"
+description = "API para integralização de funcionalidades do projeto trabalhado durante a disciplina do Projetão UFPE"
+authors = ["Gustavo Nascimento <gppn@cin.ufpe.br>", "Aslay Clevisson <acss3@cin.ufpe.br>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.1.1"
+djangorestframework = "^3.14.0"
+django-cors-headers = "^3.13.0"
+dj-rest-auth = "^2.2.5"
+django-allauth = "^0.51.0"
+drf-yasg = "^1.21.4"
+
+[tool.poetry.dev-dependencies]
+blue = "^0.9.1"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
