@@ -15,8 +15,8 @@ Aplicação para realizar armazenamento de imagens
 
 1. Clone o repositório
     
-    $ git clone git@github.com:Gustanascimento/projetaoSI-22.1-pythonback.git
-    $ cd projetaosi-22.1-pythonback
+        $ git clone git@github.com:Gustanascimento/projetaoSI-22.1-pythonback.git
+        $ cd projetaosi-22.1-pythonback
 
 2. Instalação Poetry
 
