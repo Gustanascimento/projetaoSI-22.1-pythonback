@@ -9,13 +9,14 @@ from .serializers import ImageSerializer, ImageUrlSerializer
 
 
 def check_title_image(title):
-    url_results = DuckDuckSearch()
-    url_results.get_results(title)
+    search_title_image = DuckDuckSearch()
+    
+    url_image_results = search_title_image.get_results(title)
 
-    if url_image := ImageUrl.objects.filter(url=url_results):
+    if url_image := ImageUrl.objects.filter(url=url_image_results):
         return url_image[0].id
     else:
-        obj = ImageUrl.objects.create(url=url_results)
+        obj = ImageUrl.objects.create(url=url_image_results)
         return obj.id
 
 
@@ -30,7 +31,7 @@ class ImageList(generics.ListCreateAPIView):
                 request.POST._mutable = True
 
             request.POST['image_url'] = url_image
-            return self.create(request, url_image=url_image, *args, **kwargs)
+            return self.create(request, *args, **kwargs)
 
         # return {'reason': 'success'}
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
