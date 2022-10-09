@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from .models import ImageDetail
+from app.models.image_detail import ImageDetail
 
 # Create your tests here.
 
