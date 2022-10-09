@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from .models import Image
+from app.models.image_detail import ImageDetail
 
 # Create your tests here.
 
@@ -8,7 +8,7 @@ from .models import Image
 class ImageTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        cls.image = Image.objects.create(
+        cls.image = ImageDetail.objects.create(
             title='Peito de galinha',
             description='Peito de galinha com tomate',
             image_url='http://www.hojetemfrango.com.br/wp-content/uploads/2018/11/peito-de-frango-com-tomate-grape-e-azeitona-preta.jpg',
