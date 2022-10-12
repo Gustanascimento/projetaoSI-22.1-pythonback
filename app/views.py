@@ -8,6 +8,7 @@ from app.service.request_duck_duck import DuckDuckSearch
 from .serializers import ImageSerializer, ImageUrlSerializer
 
 
+# TODO: remover duplicações a partir de urls inseridas
 def check_title_image(title):
     search_title_image = DuckDuckSearch()
     
