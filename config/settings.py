@@ -142,7 +142,6 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -155,3 +154,7 @@ ALLOWED_CORS_ORIGINS = ['http://localhost:3000', 'http://localhost:4000']
 CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://localhost:4000']
 
 
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {'default': dj_database_url.config()}
+
+django_heroku.settings(locals())
