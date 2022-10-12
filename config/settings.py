@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config(default='postgres://USER:PASSWORD@localhost:5432/backend')}
+DATABASES = {'default': dj_database_url.config(default='postgres://projetao:projetao@localhost:5432/backend')}
 
 
 # Password validation
@@ -145,7 +145,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ALLOWED_CORS_ORIGINS = ['http://localhost:3000', 'http://localhost:4000']
 CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://localhost:4000']
-
-if 'DATABASE_URL' in os.environ:
-    import dj_database_url
-    DATABASES = {'default': dj_database_url.config()}
