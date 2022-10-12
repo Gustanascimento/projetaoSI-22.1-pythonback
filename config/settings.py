@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config(default='postgres://projetao:projetao@localhost:5432/backend')}
+DATABASES = {'default': dj_database_url.config(default='postgres://projetao:projetao@5432/backend')}
 
 
 # Password validation
