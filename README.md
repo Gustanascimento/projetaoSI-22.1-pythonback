@@ -13,29 +13,36 @@ Aplicação para realizar armazenamento de imagens
 
 ## Setup
 
-1. Clone o repositório
-    
-    $ git clone git@github.com:Gustanascimento/projetaoSI-22.1-pythonback.git
-    $ cd projetaosi-22.1-pythonback
+1.  Clone o repositório
 
-2. Instalação Poetry
+        $ git clone git@github.com:Gustanascimento/projetaoSI-22.1-pythonback.git
+
+        $ cd projetaosi-22.1-pythonback
+
+2.  Instalação Poetry
 
     Linux/Windows Bash
-        
+
         $ curl -sSL https://install.python-poetry.org | python3 -
 
     Windows Shell
 
         $ (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 
-#### Para mais informações, consultar [Documentação Oficial Poetry](https://python-poetry.org/docs/ "Introdução")
+    #### Para mais informações, consultar [Documentação Oficial Poetry](https://python-poetry.org/docs/ "Introdução")
 
-3. Instalação de dependências
+3.  Instalação de dependências
 
-    $ poetry Shell
-    $ poetry install
+        $ poetry Shell
+        $ poetry install
 
-4. Executar projeto local
+4.  Antes de iniciar o projeto
+
+    `Adicionar um arquivo .env dentro da pasta "config", assim, o serviço de email poderá ser utilizado`
+
+    `Variáveis estão no arquivo .env-example`
+
+5.  Executar projeto local
 
     Terminal
 

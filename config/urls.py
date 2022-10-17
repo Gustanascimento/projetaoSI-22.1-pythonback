@@ -45,4 +45,5 @@ url_docs = [
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('app.urls')),
+    path('mail/', include('mail.urls')),
 ] + url_docs
