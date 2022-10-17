@@ -9,7 +9,9 @@ from app.models.image_url import ImageUrl
 class ImageTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        cls.url_image = ImageUrl.objects.create(url='http://www.hojetemfrango.com.br/wp-content/uploads/2018/11/peito-de-frango-com-tomate-grape-e-azeitona-preta.jpg')
+        cls.url_image = ImageUrl.objects.create(
+            url='http://www.hojetemfrango.com.br/wp-content/uploads/2018/11/peito-de-frango-com-tomate-grape-e-azeitona-preta.jpg'
+        )
 
         cls.image = ImageDetail.objects.create(
             title='Peito de galinha',

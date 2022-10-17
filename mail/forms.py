@@ -1,4 +1,3 @@
-
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
@@ -19,7 +18,7 @@ class PayloadEmail(forms.Form):
         msg += f'\n"{subject}"\n\n'
         msg += cl_data.get('message')
 
-        return subject, msg        
+        return subject, msg
 
         def send(self):
             subject, msg = self.get_info()
