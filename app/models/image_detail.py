@@ -1,5 +1,6 @@
-from app.models.image_url import ImageUrl
 from django.db import models
+
+from app.models.image_url import ImageUrl
 
 
 class ImageDetail(models.Model):

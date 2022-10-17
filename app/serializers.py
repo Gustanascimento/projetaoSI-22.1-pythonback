@@ -14,8 +14,7 @@ class ImageSerializer(serializers.ModelSerializer):
     image_url = ImageUrlSerializer(many=False)
 
     created_at = serializers.DateTimeField(
-        format="%Y-%m-%d %H:%M:%S",
-        read_only=True
+        format='%Y-%m-%d %H:%M:%S', read_only=True
     )
 
     class Meta:
