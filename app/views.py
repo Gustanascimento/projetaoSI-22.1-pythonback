@@ -8,16 +8,17 @@ from app.service.request_duck_duck import DuckDuckSearch
 from .serializers import ImageSerializer, ImageUrlSerializer
 
 
+# TODO: remover duplicações a partir de urls inseridas
 def check_title_image(title):
     search_title_image = DuckDuckSearch()
-    
+
     url_image_results = search_title_image.get_results(title)
 
     if url_image := ImageUrl.objects.filter(url=url_image_results):
         return url_image[0]
-    else:
-        obj = ImageUrl.objects.create(url=url_image_results)
-        return obj
+
+    obj = ImageUrl.objects.create(url=url_image_results)
+    return obj
 
 
 # Create your views here.
@@ -26,14 +27,21 @@ class ImageList(generics.ListCreateAPIView):
     serializer_class = ImageSerializer
 
     def perform_create(self, serializer):
-        url = self.request.data['image_url']['url'] if 'image_url' in self.request.data else self.request.data['image_url.url']
-        
+        url = (
+            self.request.data['image_url']['url']
+            if 'image_url' in self.request.data
+            else self.request.data['image_url.url']
+        )
+
         if url == '':
             image_url = check_title_image(self.request.data['title'])
         else:
-            image_url = ImageUrl.objects.create(url=self.request.data['image_url.url'])
-            
+            image_url = ImageUrl.objects.create(
+                url=self.request.data['image_url.url']
+            )
+
         serializer.save(image_url=image_url)
+
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
