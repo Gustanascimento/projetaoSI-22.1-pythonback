@@ -12,6 +12,13 @@ from .service.mail import EmailService
 
 class SendEmailView(APIView):
     @swagger_auto_schema(
+        responses={status.HTTP_201_CREATED: openapi.Response(
+            description='Email sent successfully',
+            examples={
+                "application/json": {
+                    'message': 'Email enviado com sucesso'
+                }
+            })},
         request_body=openapi.Schema(
             type=openapi.TYPE_OBJECT,
             properties={
