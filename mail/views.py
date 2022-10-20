@@ -26,7 +26,7 @@ class SendEmailView(APIView):
                     type=openapi.TYPE_OBJECT,
                     properties={
                         'category': openapi.Schema(type=openapi.TYPE_STRING),
-                        'isMarked': openapi.Schema(type=openapi.TYPE_BOOLEAN),
+                        'isMarket': openapi.Schema(type=openapi.TYPE_BOOLEAN),
                         'userData': openapi.Schema(
                             type=openapi.TYPE_ARRAY,
                             items=openapi.Items(
